@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mysql:
+    image: docker.io/mysql:8
+    restart: always
+    ports:
+      - "3306:3306"
+    command: "--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci"
+    environment:
+      MYSQL_ROOT_PASSWORD: pw
+      MYSQL_DATABASE: snippetbox
+      MYSQL_USER: pw
+      MYSQL_PASSWORD: pw
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d:z
