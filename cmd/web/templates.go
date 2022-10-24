@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/siwonpawel/lets-go/internal/models"
+	"github.com/siwonpawel/lets-go/internal/validator"
 )
 
 type templateData struct {
@@ -16,10 +17,10 @@ type templateData struct {
 }
 
 type snippetCreateForm struct {
-	Title       string
-	Content     string
-	Expires     int
-	FieldErrors map[string]string
+	Title   string
+	Content string
+	Expires int
+	validator.Validator
 }
 
 func humanDate(t time.Time) string {
