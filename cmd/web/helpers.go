@@ -39,11 +39,6 @@ func (app *application) render(w http.ResponseWriter, status int, page string, d
 		app.serverError(w, err)
 	}
 
-	if err != nil {
-		app.serverError(w, err)
-		return
-	}
-
 	w.WriteHeader(status)
 	buf.WriteTo(w)
 }
