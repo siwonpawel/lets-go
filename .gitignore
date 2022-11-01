@@ -49,3 +49,7 @@ go.work
 
 # End of https://www.toptal.com/developers/gitignore/api/go,visualstudiocode
 cmd/web/__debug_bin
+tls/cert.pem
+.gitignore
+.gitignore
+tls/key.pem
