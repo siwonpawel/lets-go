@@ -49,7 +49,7 @@ func (app *application) snippetView(w http.ResponseWriter, r *http.Request) {
 	app.render(w, http.StatusOK, "view.tmpl", data)
 }
 
-func (app *application) snippedCreateForm(w http.ResponseWriter, r *http.Request) {
+func (app *application) snippetCreateForm(w http.ResponseWriter, r *http.Request) {
 	data := app.newTemplateData(r)
 	data.Form = snippetCreateForm{
 		Expires: 365,
@@ -57,7 +57,7 @@ func (app *application) snippedCreateForm(w http.ResponseWriter, r *http.Request
 	app.render(w, http.StatusOK, "create.tmpl", data)
 }
 
-func (app *application) snippedCreatePost(w http.ResponseWriter, r *http.Request) {
+func (app *application) snippetCreatePost(w http.ResponseWriter, r *http.Request) {
 	var form snippetCreateForm
 	err := app.decodePostForm(r, &form)
 	if err != nil {

@@ -29,8 +29,8 @@ func (app *application) routes() http.Handler {
 	protected := dynamic.Append(app.requireAuthentication)
 
 	router.Handler(http.MethodPost, "/user/logout", protected.ThenFunc(app.userLogoutPost))
-	router.Handler(http.MethodGet, "/snippet/create", protected.ThenFunc(app.snippedCreateForm))
-	router.Handler(http.MethodPost, "/snippet/create", protected.ThenFunc(app.snippedCreatePost))
+	router.Handler(http.MethodGet, "/snippet/create", protected.ThenFunc(app.snippetCreateForm))
+	router.Handler(http.MethodPost, "/snippet/create", protected.ThenFunc(app.snippetCreatePost))
 
 	standard := alice.New(app.recoverPanic, app.logRequest, secureHeaders)
 	return standard.Then(router)
